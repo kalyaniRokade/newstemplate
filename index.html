@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png"> 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Inter:wght@400;700;800&family=Montserrat:wght@500;700&family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  
+  <title>Frontend Mentor | News homepage</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>  
+  /* Soft orange: hsl(35, 77%, 62%)
+- Soft red: hsl(5, 85%, 63%)
+
+### Neutral
+
+Off-white: hsl(36, 100%, 99%)
+Grayish blue: hsl(233, 8%, 79%)
+Dark grayish blue: hsl(236, 13%, 42%)
+Very dark blue: hsl(240, 100%, 5%) */ 
+*{ 
+  font-family:Inter;
+}
+    .news{ 
+      padding-left:100px; 
+      padding-right:100px; 
+      padding-top:45px; 
+      
+    }
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }  
+    a{ 
+      text-decoration:none;
+    }
+    .header{ 
+      display:flex; 
+      justify-content: space-between; 
+      align-items: center;  
+      padding-right:45px; 
+      margin-bottom:40PX;
+    
+    }  
+    .right-side a{ 
+      text-decoration: none; 
+      margin-right:20px; 
+      color:hsl(236, 13%, 42%); 
+
+    }  
+    .info{ 
+      display:grid;
+       grid-template-columns:700px 1fr; 
+       
+       column-gap:30px;
+    } 
+    .information{ 
+      display:grid; 
+      grid-template-columns:250px 1fr; 
+      column-gap:85px;
+    } 
+    .image{ 
+      width:700px; 
+      height:250px;
+    } 
+    .right{   
+      margin-right:48px;
+      border-style: solid; 
+     padding:25px; 
+     background-color:hsl(240, 100%, 5%) ; 
+     height:350px;
+    } 
+     .title{ 
+      font-weight:bold; 
+      font-size:18px; 
+      color:white;
+     }   
+     .bottom{ 
+      display:grid;  
+      grid-template-columns:310px 310px 310px; 
+      column-gap:30px;
+     }
+     .exam{ 
+        display:grid; 
+        grid-template-columns:120px 180px; 
+        column-gap:10px;
+     }   
+     .exam1{ 
+      display:grid; 
+        grid-template-columns:120px 180px; 
+        column-gap:10px; 
+        margin-left:45px;
+     }
+     .title_exam{ 
+      color:black;
+     }
+     .read-more{ 
+      width:180px;
+      height:40px; 
+      color:white; 
+      background-color:hsl(35, 77%, 62%) ; 
+      border-style:none; 
+      cursor:pointer;
+     } 
+     .read-more:hover,.read-more:active{ 
+      background-color: hsl(240, 100%, 5%);
+     } 
+      a:hover{ 
+      color:hsl(5, 85%, 63%);
+     } 
+     .right a:hover{ 
+      color:hsl(35, 77%, 62%);
+     }  
+     .menu{  
+      /* display:none;  */ 
+      z-index:100;
+       height:100vh;
+       width:280px; 
+       
+       
+
+     } 
+     .close-menu{   
+          
+
+          margin-left:230px;
+          margin-top:20px;
+          right:20px;
+     } 
+     .list{ 
+      margin-top:50px; 
+      font-size:18px; 
+     
+     } 
+     .list-elements{ 
+          margin-top:18px;
+     } 
+     .menu-tag{  
+
+         display:none;
+     }
+     @media(max-width:475px){   
+         .news{ 
+          padding:15px;
+         }
+        .header{ 
+           width:375px; 
+           
+        }
+      
+            .menu-tag{ 
+              display:block;
+              margin-right:5px;
+             
+        }  
+        .right-side a{ 
+          opacity:0;
+        }
+        .image{ 
+          width:350px;
+        } 
+        .info{ 
+         display:flex; 
+         flex-direction:column; 
+
+        }  
+        .information{ 
+          display:flex; 
+          flex-direction:column;
+        } 
+        .headline{ 
+          width:320px;
+        } 
+        .para{ 
+          width:350px;
+        }
+        .right{  
+          margin-top:45px;
+          width:300px; 
+
+        }
+        .bottom{ 
+          display:flex; 
+          flex-direction:column;
+        } 
+        .exam{ 
+          margin-top:15px;
+        } 
+        .exam1{ 
+          margin:0px; 
+          margin-top:15px;
+        } 
+        
+     } 
+      
+  </style> 
+
+</head>
+<body>
+   <div class="news"> 
+       <div class="header"> 
+          <div class="left-side"> 
+            <img alt="logo" src="logo.svg">
+          </div> 
+          <div class="right-side"> 
+            <a href="#">Home</a> 
+            <a href="#">New</a> 
+            <a href="#">Popular</a>
+            <a href="#">Trending</a> 
+            <a href="#">Categories</a>
+          </div> 
+          <div class="menu-tag" id="open-menu"> 
+             <image src="icon-menu.svg"></image>
+          </div>
+         
+       </div>
+       <!-- info -->
+       <div class="info"> 
+          <div class="left"> 
+            <img class="image"src="image-web-3-desktop.jpg"> 
+              <div class="information">  
+                  <div class="headline"> 
+                    <h1 style="font-family:Inter;font-weight:800;font-size:44px;line-height:40px;"> 
+                      The Bright Future of Web 3.0?
+                     </h1>
+                  </div>
+                    
+              
+                 <div class="para"> 
+                   <p style="color:hsl(236, 13%, 42%);line-height:20px;"> 
+                     We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
+                     But is it really fulfilling its promise?
+                   </p> 
+                   <button class="read-more"><strong>READ MORE</strong></button>
+                  </div> 
+                </div>
+             </div> 
+           <div class="right"> 
+             <h1 style="color: hsl(35, 77%, 62%)"> 
+              New 
+             </h1> 
+             <div class="ques"> 
+                 <a href="#" class="title">Hydrogen VS Electric Cars</a href="#"> 
+                 <p style="color:hsl(237, 8%, 51%);font-size:14px;">   Will hydrogen-fueled cars ever catch up to EVs?</p>
+             </div> 
+              <hr>
+             <div class="ques"> 
+              <a href="#" class="title"> 
+                The Downsides of AI Artistry</a href="#"> 
+              <p style="color:hsl(237, 8%, 51%);font-size:14px;">   What are the possible adverse effects of on-demand AI image generation?</p>
+          </div>  
+          <hr>
+          <div class="ques"> 
+            <a href="#" class="title">   Is VC Funding Drying Up?</a href="#"> 
+            <p style="color:hsl(237, 8%, 51%);font-size:14px;"> Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
+        </div>
+          </div>
+       </div> 
+
+       <!-- bottom div --> 
+       <div class="bottom"> 
+          
+
+        <div class="exam">   
+           <div class="images"> 
+               <img style="width:120px;height:150px;object-fit:cover;object-position:center;"src="image-retro-pcs.jpg">
+           </div>
+           <div class="examples"> 
+             <p style="color:hsl(236, 13%, 42%)">01</p> 
+             <a href="#" class="title_exam"> <strong>Reviving Retro PCs</strong></a href="#"> 
+             <p style="font-size:12px;line-height:20px;color:hsl(236, 13%, 42%);">  What happens when old PCs are given modern upgrades?</p>
+           </div> 
+         </div> 
+
+         <div class="exam">   
+          <div class="images"> 
+              <img style="width:120px;height:150px;object-fit:cover;object-position:center;"src="image-top-laptops.jpg">
+          </div>
+          <div class="examples"> 
+            <p style="color:hsl(236, 13%, 42%)">02</p> 
+            <a href="#" class="title_exam">   <strong>Top 10 Laptops of 2022</strong></a href="#"> 
+            <p style="font-size:12px;line-height:20px;color:hsl(236, 13%, 42%);">   Our best picks for various needs and budgets.</p>
+          </div> 
+        </div> 
+
+
+        <div class="exam1" >   
+          <div class="images" > 
+              <img style="width:120px;height:150px;object-fit:cover;object-position:center;"src="image-gaming-growth.jpg">
+          </div>
+          <div class="examples"> 
+            <p style="color:hsl(236, 13%, 42%)">03</p> 
+            <a href="#" class="title_exam">   <strong>The Growth of Gaming</strong></a href="#"> 
+            <p style="font-size:12px;line-height:20px;color:hsl(236, 13%, 42%);">    How the pandemic has sparked fresh opportunities.</p>
+          </div> 
+        </div> 
+
+
+
+       </div>
+       
+   </div> 
+
+
+
+   <script>  
+       var iconMenu=document.getElementById('open-menu');  
+       var parent_Element=document.getElementsByClassName('right-side'); 
+           var menu_tag=document.createElement('div'); 
+            menu_tag.classList.add('menu'); 
+            var content=`<img id="cl-menu"class="close-menu"src="icon-menu-close.svg"> 
+    <ul class="list"type=none> 
+       <li class="list-elements">Home</li> 
+       <li class="list-elements">New</li> 
+       <li class="list-elements">Popular</li>
+       <li class="list-elements">Trending</li> 
+       <li class="list-elements">Categories</li>
+    </ul>` 
+       menu_tag.innerHTML=content; 
+       iconMenu.addEventListener("mouseenter",function(){ 
+            iconMenu.innerHTML=menu_tag.innerHTML;
+        });  
+       
+       
+  </script>
+</body>
+</html>
